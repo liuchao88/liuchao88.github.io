@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://liuchao88.github.io/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://liuchao88.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Github-hexo搭建网站教程" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/" class="article-date">
+  <time datetime="2022-04-22T02:52:17.802Z" itemprop="datePublished">2022-04-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="注册域名"><a href="#注册域名" class="headerlink" title="注册域名"></a>注册域名</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/u011508289/article/details/105608081">注册域名教程</a></p>
+<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/86961133">Namesilo DNS 域名解析教程和常见问题解决方法汇总</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/mfrbuaa/p/4470469.html">Github Pages 静态网页建站</a></p>
+<h1 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h1><h2 id="github配置"><a href="#github配置" class="headerlink" title="github配置"></a>github配置</h2><p>新建一个Repositories，Repository name填 你的GitHub用户名.github.io</p>
+<ul>
+<li>打开博客网址，提示404“There isn’t a GitHub Pages site here.”，解决方法是进入github仓库的settings，首先把repository visibility设置成public，然后进入Pages，Source中的Branch选择master，Custom domain设置成自己的博客地址，保存后等待TLS验证完毕即可。</li>
+</ul>
+<h2 id="Git配置"><a href="#Git配置" class="headerlink" title="Git配置"></a>Git配置</h2><ul>
+<li></li>
+<li>命令行输入<code>ssh -t git@github.com</code>测试是否是连接至github，弹出提示<code>Warning: Permanently added the RSA host key for IP address &#39;20.205.243.166&#39; to the list of known hosts. PTY allocation request failed on channel 0</code>，<ul>
+<li>说明没有公钥。<ul>
+<li>重置用户名和邮箱<ul>
+<li>git config –global user.name “yourname”</li>
+<li>git config –global user.email“<a href="mailto:&#x79;&#x6f;&#x75;&#x72;&#x40;&#101;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;">&#x79;&#x6f;&#x75;&#x72;&#x40;&#101;&#109;&#97;&#x69;&#108;&#x2e;&#x63;&#111;&#109;</a>“</li>
+</ul>
+</li>
+<li>删除.ssh文件夹下的known_hosts </li>
+<li>创建一个公钥，输入ssh-keygen -t rsa -C ‘邮箱地址’，然后设置存放公钥的位置和密码，默认的话直接回车键确认。</li>
+<li>git查看ssh公钥的方法<ul>
+<li>1）通过git bash命令窗口<ul>
+<li>直接输入cat ~/.ssh/id_rsa.pub即可查看</li>
+</ul>
+</li>
+<li>2）直接打开用户目录下的.ssh文件夹，打开里面的id_rsa.pub文件即可查看</li>
+</ul>
+</li>
+<li>将公钥添加到github，点击右上角带黄色的头像–&gt;settings–&gt;（personal settings中的）SSH and GPG keys–&gt;new SSH key–&gt;title自己取名，key中粘贴publickey–&gt;Add SSH key</li>
+</ul>
+</li>
+<li>命令中的-T应该是大写。</li>
+<li>在git中输入命令：ssh -T <a href="mailto:&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#x69;&#x74;&#x40;&#103;&#105;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>然后会跳出一堆话。输入命令：yes</li>
+</ul>
+</li>
+<li>运行‘hexo d’提示<code>remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.</code>意思是自从21年8月13后不再支持用户名密码的方式验证了，需要创建个人访问令牌(personal access token)。<ul>
+<li>创建令牌：点击Settings→点击左侧的Developer settings→点击Personal access tokens→点击Generate new token，选择scope全勾上即可。</li>
+<li>应用令牌</li>
+</ul>
+</li>
+</ul>
+<h2 id="Hexo"><a href="#Hexo" class="headerlink" title="Hexo"></a>Hexo</h2><ul>
+<li><p>运行hexo时报错“The “mode” argument must be integer”，原因是hexo版本和Node版本不匹配，Node版本过高。解决方案是将hexo更新到新版本，或者将Node退回到旧版本。</p>
+</li>
+<li><p>hexo升级时报错use_date_for_updated，解决方案是找到hexo的配置文件：_config.yml 更改其中的：use_date_for_updated 为 updated_option</p>
+</li>
+<li><p>运行hexo d报错<code> Failed to connect to github.com port 443 after 21101 ms</code>，是因为hosts中没有添加github的ip地址，<a target="_blank" rel="noopener" href="https://blog.csdn.net/changyana/article/details/122444850">参考</a></p>
+</li>
+</ul>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考:"></a>参考:</h2><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/35668237">超详细Hexo+Github博客搭建小白教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/26625249">GitHub+Hexo 搭建个人网站详细教程</a></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/78467553">一小时搭建完自己的个人网站</a></p>
+<h1 id="遇到的问题："><a href="#遇到的问题：" class="headerlink" title="遇到的问题："></a>遇到的问题：</h1><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24357770">npm是什么?</a><br><a target="_blank" rel="noopener" href="https://developer.aliyun.com/mirror/NPM?from=tnpm">淘宝 NPM 镜像</a><br><a target="_blank" rel="noopener" href="http://jekyllcn.com/">jekyll</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_40816738/article/details/90247205">错误提示”The authenticity of host ‘github.com (52.74.223.119)’ can’t be established”的处理方法</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/tolingsoft/p/12060864.html">使用‘hexo d’提交文章时需要登陆2次并提示”Logon failed, use ctrl+c to cancel basic credential prompt. remote: Invalid username or password”错误的处理方法</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://liuchao88.github.io/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/" data-id="cl29vs09h000048v9grff84s7" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2022/04/21/hello-world/" class="article-date">
+  <time datetime="2022-04-21T14:46:31.334Z" itemprop="datePublished">2022-04-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2022/04/21/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://liuchao88.github.io/2022/04/21/hello-world/" data-id="cl29vs0a5000148v95l4ahk25" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/04/">April 2022</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/">(no title)</a>
+          </li>
+        
+          <li>
+            <a href="/2022/04/21/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2022 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
