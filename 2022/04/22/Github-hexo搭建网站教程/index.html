@@ -21,7 +21,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://liuchao88.github.io/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/hexo.jpg">
 <meta property="article:published_time" content="2022-04-21T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-04-29T12:49:27.400Z">
+<meta property="article:modified_time" content="2022-04-29T13:36:29.456Z">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://liuchao88.github.io/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/hexo.jpg">
@@ -183,7 +183,7 @@
 <div class="article-date">
   <i class="fa fa-calendar-plus-o"></i>
   <a href="/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/" class="article-date">
-     <time datetime="2022-04-29T12:49:27.400Z" itemprop="dateModified">2022-04-29</time>
+     <time datetime="2022-04-29T13:36:29.456Z" itemprop="dateModified">2022-04-29</time>
   </a>
 </div>
 
@@ -245,7 +245,9 @@
 <p><strong>遇到的问题</strong></p>
 <ul>
 <li>运行hexo时报错“The “mode” argument must be integer”，原因是hexo版本和Node版本不匹配，Node版本过高。解决方案是将hexo更新到新版本，或者将Node退回到旧版本。</li>
-<li>hexo升级时报错use_date_for_updated，解决方案是找到hexo的配置文件：_config.yml 更改其中的：use_date_for_updated 为 updated_option<h2 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h2></li>
+<li>hexo升级时报错use_date_for_updated，解决方案是找到hexo的配置文件：_config.yml 更改其中的：use_date_for_updated 为 updated_option</li>
+</ul>
+<h2 id="生成博客"><a href="#生成博客" class="headerlink" title="生成博客"></a>生成博客</h2><ul>
 <li>输入：<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
 <ul>
 <li>这里的blog是用户自己取的一个站点目录名字。</li>
@@ -268,7 +270,8 @@
 </li>
 <li>然后找到 deploy 字段，修改为：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: https://github.com/你的GitHub用户名/你的GitHub用户名.github.io.git</span><br><span class="line">branch: master</span><br></pre></td></tr></table></figure></li>
 <li>安装Git部署插件，输入命令:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure></li>
-<li>最后，输入命令：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure></li>
+<li>最后，输入命令：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean </span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
+<h3 id="遇到的问题-1"><a href="#遇到的问题-1" class="headerlink" title="遇到的问题"></a>遇到的问题</h3>运行’hexo -d’时提示‘fatal: unable to access ‘<a target="_blank" rel="noopener" href="https://github.com/%E7%94%A8%E6%88%B7%E5%90%8D/%E7%94%A8%E6%88%B7%E5%90%8D.github.io.git/&#39;">https://github.com/用户名/用户名.github.io.git/&#39;</a>: OpenSSL SSL_read: C’错误。解决方法：把URL 模式从HTTPS改为SSH即可。详情见<a target="_blank" rel="noopener" href="https://docs.github.com/cn/get-started/getting-started-with-git/managing-remote-repositories">Changing a remote’s URL</a></li>
 </ul>
 <h1 id="博客优化"><a href="#博客优化" class="headerlink" title="博客优化"></a>博客优化</h1><h2 id="更换主题"><a href="#更换主题" class="headerlink" title="更换主题"></a>更换主题</h2><ul>
 <li>下载主题，以hueman主题为例<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/ppoffice/hexo-theme-hueman.git themes/hueman</span><br></pre></td></tr></table></figure></li>
@@ -346,7 +349,7 @@
 
 
 
-    <a data-url="https://liuchao88.github.io/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/" data-id="cl2des5y200007gv95std5h7a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://liuchao88.github.io/2022/04/22/Github-hexo%E6%90%AD%E5%BB%BA%E7%BD%91%E7%AB%99%E6%95%99%E7%A8%8B/" data-id="cl2khkuv500026cv97yq68upe" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -431,7 +434,7 @@ Github Pages 静态网页建站
 github配置
 新建一个Repositories，Repository name填 你的GitHub用户名.github.io
 github仓库的settings，把repository visibility设置成public，然后进入Pages，Source中的Bran",
-        "wordCount": 441
+        "wordCount": 459
     }
 </script>
 
